@@ -1,0 +1,65 @@
+#--------------------------------------------------------------------------------------
+README
+#--------------------------------------------------------------------------------------
+
+Copyright (C) 2009-2010 Pebble Bed Modular Reactor (Pty) Limited (PBMR)
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+See https://csrcs.pbmr.co.za/svn/nea/prototypes/reaktor/foam2med
+
+
+#--------------------------------------------------------------------------------------
+Introduction
+#--------------------------------------------------------------------------------------
+
+This is a command line utility that allows to translate OpenFOAM 
+( Open Source CFD Toolbox, see http://sourceforge.net/projects/foam/ )
+data into MED format ( see http://www.code-aster.org/outils/med/ ). 
+The initial goal to develop this utility was to be able integrate 
+OpenFOAM functionality with SALOME ( see http://www.salome-platform.org ).
+
+#--------------------------------------------------------------------------------------
+Installation
+#--------------------------------------------------------------------------------------
+
+See the INSTALL file for more information about installing of foam2med 
+utility.
+
+#--------------------------------------------------------------------------------------
+Usage
+#--------------------------------------------------------------------------------------
+
+"foam2med" utility requires OpenFOAM and SALOME as its pre-requisites.
+"foam2med" utility is compatible with OpenFOAM version 1.4.1 or higher.
+Note, that OpenFOAM is required only in the run time to launch 
+the first step of translation - conversion OpenFOAM data to VTK; 
+it is not required for the building of the foam2med.
+
+Before start to use "foam2med" it is necessary to source the generated "bashrc" file
+
+Run "foam2med" utility for some already calculated solver cases, like the following:
+
+    foam2med.py \
+          --case-dir=${WM_PROJECT_USER_DIR}/run/tutorials/icoFoam/cavity \
+          --foam-time=0.3 \
+          --output-med-file=${WM_PROJECT_USER_DIR}/run/tutorials/icoFoam/cavity/cavity.med  \
+          --output-mesh-name=foo
+
+Use foam2med utility on the previously calculated OpenFOAM cases to generate
+MED files. Please use --help command line option to get more details about
+the supported feautres.
+
+
+#--------------------------------------------------------------------------------------

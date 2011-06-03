@@ -1,0 +1,98 @@
+#--------------------------------------------------------------------------------------
+Installation Instructions
+#--------------------------------------------------------------------------------------
+
+Copyright (C) 2009-2010 Pebble Bed Modular Reactor (Pty) Limited (PBMR)
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+See https://csrcs.pbmr.co.za/svn/nea/prototypes/reaktor/foam2med
+
+
+#--------------------------------------------------------------------------------------
+Pre-requisites
+#--------------------------------------------------------------------------------------
+
+foam2med utility requires OpenFOAM and SALOME as its pre-requisites.
+In its trun SALOME shoukd come with corresponding KERNEL, MED, GUI and VISU
+modules. To configure its build system, "foam2med" utitlity need confFoam 
+(common configuration package).
+
+* Make sure that OpenFOAM is installed (tested with versions 1.4.1-dev and 1.6).
+  Please follow instructions from corresponding INSTALL file to setup OpenFOAM
+  in your environment.
+
+* Make sure that SALOME is installed (tested with versions 4.1.4 and 5.1.1).
+  Please follow instructions from corresponding INSTALL file to setup SALOME
+  in your environment.
+
+Then follow below instructions in order to build and install the foam2med utility.
+
+#--------------------------------------------------------------------------------------
+Basic Installation
+#--------------------------------------------------------------------------------------
+
+The build procedure of the foam2med utility is based on GNU make utility. 
+In order to build the module you have to perform the following actions:
+
+1. Go to the source directory:
+
+   cd <path to foam2med sources>
+
+2. Modify the provided "env.sh" file to adjust to your local environment.
+
+   <your favorite editor> ./env.sh
+
+3. Source this "env.sh" file to define corresponding build environment.
+
+   source ./env.sh
+
+4. Configuring the build system:
+
+   ./build_configure
+   ./configure
+
+   Make sure that after each configuration step "--- OK ---" message is
+   printed in your console.
+
+   To see all applicable configuration options run "./configure --help"
+
+5. Build "foam2med" utility:
+
+   make
+
+   (use "make clean" command to cleanup the build folder)
+
+
+#--------------------------------------------------------------------------------------
+"foam2med" utility environment
+#--------------------------------------------------------------------------------------
+
+Before start to use "foam2med" it is necessary to source the generated "bashrc" file
+
+
+#--------------------------------------------------------------------------------------
+"foam2med" utility installation check
+#--------------------------------------------------------------------------------------
+
+Run the "foam2med" utility for some already calculated solver cases, like the following:
+
+    foam2med.py \
+          --case-dir=${WM_PROJECT_USER_DIR}/run/tutorials/icoFoam/cavity \
+          --foam-time=0.3 \
+          --output-med-file=${WM_PROJECT_USER_DIR}/run/tutorials/icoFoam/cavity/cavity.med  \
+          --output-mesh-name=foo
+
+
+#--------------------------------------------------------------------------------------

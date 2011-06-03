@@ -1,0 +1,59 @@
+## Copyright (C) 2009-2010 Pebble Bed Modular Reactor (Pty) Limited (PBMR)
+## 
+## This program is free software: you can redistribute it and/or modify
+## it under the terms of the GNU General Public License as published by
+## the Free Software Foundation, either version 3 of the License, or
+## (at your option) any later version.
+##
+## This program is distributed in the hope that it will be useful,
+## but WITHOUT ANY WARRANTY; without even the implied warranty of
+## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+## GNU General Public License for more details.
+## 
+## You should have received a copy of the GNU General Public License
+## along with this program.  If not, see <http://www.gnu.org/licenses/>.
+## 
+## See https://csrcs.pbmr.co.za/svn/nea/prototypes/reaktor/pyfoam
+##
+## Author : Alexey PETROV
+##
+
+
+#--------------------------------------------------------------------------------------
+# Define the application aim
+apps := $(patsubst %.cxx, %, $(wildcard *.cxx))
+objs := $(patsubst %.cxx, %.o, $(wildcard *.cxx))
+
+# Define the main rule (the first one, will be the main)
+all: $(apps)
+	@echo output : $(apps)
+
+# Define the compilation flags 
+__CXXFLAGS__ = -g -MD \
+	@BOOST_CPPFLAGS@ @BOOST_CXXFLAGS@ \
+	@HDF5_CPPFLAGS@ @HDF5_CFLAGS@ \
+	@VTK_CPPFLAGS@ @VTK_CXXFLAGS@ \
+	@SALOME_KERNEL_CXXFLAGS@ \
+	@SALOME_MED_CXXFLAGS@ \
+	@SALOME_VISU_CXXFLAGS@
+
+# Define the compilation rule 
+%.o : %.cxx
+	gcc $(__CXXFLAGS__) -c $< -o $@
+
+# Define dependecies
+include $(wildcard *.d)
+
+# Define the build flags 
+__LDFLAGS__ = \
+	@BOOST_PROGRAM_OPTIONS_LDFLAGS@ \
+	@VISU_LDFLAGS@ -lVisuConvertor \
+	@SALOME_MED_LDRPATH@ \
+	@SALOME_GUI_LDRPATH@
+
+# Define the build rule 
+% : %.o
+	gcc $< $(__LDFLAGS__) -o $@
+
+clean: 
+	rm -fr $(apps) $(objs) *.d *.pyc *~

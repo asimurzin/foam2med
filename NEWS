@@ -1,0 +1,66 @@
+#--------------------------------------------------------------------------------------
+NEWS
+#--------------------------------------------------------------------------------------
+
+Copyright (C) 2009-2010 Pebble Bed Modular Reactor (Pty) Limited (PBMR)
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+See https://csrcs.pbmr.co.za/svn/nea/prototypes/reaktor/foam2med
+
+
+---------------------------------------------------------------------------
+
+New Features and Important Changes, r2.2 vs r2.1
+
+Author(s) :  Alexey PETROV
+
+2010-04-04
+
+* Adjusting to the "common configuration system" (confFoam package)
+--------------------------------------------------------------------
+"confFoam" is a "common configuration package" for the realted OpenFOAM (Open
+Source CFD Toolbox, see http://sourceforge.net/projects/foam/ ) developement. 
+The neccessity for defintion of such kind of functionality appears from the
+issue that OpenFOAM referece build system does not provide corresponding
+capabilities. As result of lack of the configuration capabilties OpenFOAM
+users/developers strugle with compilation procidure trying to discover reasons
+for this or that failure.
+
+
+---------------------------------------------------------------------------
+
+New Features and Important Changes, v2.0
+
+Author(s) :  Alexey PETROV
+
+2009-04-15
+
+1. Introduction
+---------------
+This document briefly explains some of the most important changes made
+since the release of foam2med-r1.2. The goal is to provide information for
+people who want to upgrade an older foam2med interface to the new version.
+
+2. Post-processing capabilities
+-------------------------------
+The foam2med utility is published result of its work in SALOME VISU module (by
+default). 
+
+3. Connection to SALOME functionality within Python
+---------------------------------------------------
+A new "pysalome.py" script is introduced to simplify usage of SALOME
+functionality from within Python code. Once loaded it whether connects to the
+existing SALOME session, or launch a new one. So, by usage of this script it
+is possible to unify writing of standalone and embedded Python functionality. 
