@@ -46,7 +46,7 @@ include $(wildcard *.d)
 
 # Define the build flags 
 __LDFLAGS__ = \
-	@BOOST_PROGRAM_OPTIONS_LDFLAGS@ \
+	@BOOST_PROGRAM_OPTIONS_LIBS@ \
 	@VISU_LDFLAGS@ -lVisuConvertor \
 	@SALOME_MED_LDRPATH@ \
 	@SALOME_GUI_LDRPATH@
