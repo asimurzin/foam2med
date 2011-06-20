@@ -32,38 +32,38 @@ AM_INIT_AUTOMAKE([tar-pax -Wno-portability])
 
 
 echo "--------------------------------------------------------------------------------------"
-CONFFOAM_CHECK_SALOME_KERNEL
+CONFFLU_CHECK_SALOME_KERNEL
 echo 
 
 echo "--------------------------------------------------------------------------------------"
-CONFFOAM_CHECK_SALOME_MED
+CONFFLU_CHECK_SALOME_MED
 echo 
 
 echo "--------------------------------------------------------------------------------------"
-CONFFOAM_CHECK_SALOME_GUI
+CONFFLU_CHECK_SALOME_GUI
 echo 
 
 echo "--------------------------------------------------------------------------------------"
-CONFFOAM_CHECK_SALOME_VISU
+CONFFLU_CHECK_SALOME_VISU
 echo 
 
 echo "--------------------------------------------------------------------------------------"
-CONFFOAM_CHECK_HDF5
+CONFFLU_CHECK_HDF5
 echo 
 
 echo "--------------------------------------------------------------------------------------"
-CONFFOAM_CHECK_VTK
+CONFFLU_CHECK_VTK
 echo 
 
 echo "--------------------------------------------------------------------------------------"
-CONFFOAM_CHECK_BOOST_PROGRAM_OPTIONS
+CONFFLU_CHECK_BOOST_PROGRAM_OPTIONS
 echo 
 
 echo "---------------------------- mandatory products --------------------------------"
 CONFFOAM_PRINT_SUMMURY( "salome_kernel_ok salome_med_ok salome_gui_ok salome_visu_ok hdf5_ok vtk_ok boost_program_options_ok" )
 echo
 echo "--------------------------------------------------------------------------------"
-CONFFOAM_CHECK_MANDATORY( "salome_kernel_ok salome_med_ok salome_gui_ok salome_visu_ok hdf5_ok vtk_ok boost_program_options_ok" )
+CONFFLU_CHECK_MANDATORY( "salome_kernel_ok salome_med_ok salome_gui_ok salome_visu_ok hdf5_ok vtk_ok boost_program_options_ok" )
 
 
 #--------------------------------------------------------------------------------------
