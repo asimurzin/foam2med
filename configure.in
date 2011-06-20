@@ -60,7 +60,7 @@ CONFFLU_CHECK_BOOST_PROGRAM_OPTIONS
 echo 
 
 echo "---------------------------- mandatory products --------------------------------"
-CONFFOAM_PRINT_SUMMURY( "salome_kernel_ok salome_med_ok salome_gui_ok salome_visu_ok hdf5_ok vtk_ok boost_program_options_ok" )
+CONFFLU_PRINT_SUMMURY( "salome_kernel_ok salome_med_ok salome_gui_ok salome_visu_ok hdf5_ok vtk_ok boost_program_options_ok" )
 echo
 echo "--------------------------------------------------------------------------------"
 CONFFLU_CHECK_MANDATORY( "salome_kernel_ok salome_med_ok salome_gui_ok salome_visu_ok hdf5_ok vtk_ok boost_program_options_ok" )
