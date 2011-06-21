@@ -20,6 +20,14 @@
 
 
 #--------------------------------------------------------------------------------------
+#define installation folders
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+bindir=@bindir@
+m4dir=@datarootdir@
+pythondir=@PYTHONDIR@
+
+
 # Define the application aim
 apps := $(patsubst %.cxx, %, $(wildcard *.cxx))
 objs := $(patsubst %.cxx, %.o, $(wildcard *.cxx))
@@ -57,3 +65,26 @@ __LDFLAGS__ = \
 
 clean: 
 	rm -fr $(apps) $(objs) *.d *.pyc *~
+	
+#define install(develop) rule
+install:
+	@ rm -rf $(pythondir)/foam2med $(bindir)/vtk2med $(m4dir)/foam2med/admin
+	@ install -d $(bindir) $(pythondir)/foam2med $(m4dir)/foam2med/admin
+	@ echo "install @abs_top_builddir@/vtk2med --> $(bindir)/"
+	@ cp -rf @abs_top_builddir@/vtk2med $(bindir)/
+	@ echo "install @abs_top_builddir@/foam2med.py --> $(pythondir)/foam2med/__init__.py"
+	@ cp -rf @abs_top_builddir@/foam2med.py $(pythondir)/foam2med/__init__.py
+	@ echo "install @abs_top_builddir@/admin/foam2med_check_foam2med.m4 --> $(m4dir)/foam2med/admin"
+	@ cp -rf @abs_top_builddir@/admin/foam2med_check_foam2med.m4 $(m4dir)/foam2med/admin/
+develop:
+	@ rm -rf $(pythondir)/foam2med $(bindir)/vtk2med $(m4dir)/foam2med/admin
+	@ echo "ln -s @abs_top_builddir@/vtk2med --> $(bindir)/vtk2med"
+	@ install -d $(bindir) $(pythondir)/foam2med $(m4dir)/foam2med/admin
+	@ echo "ln -s @abs_top_builddir@/vtk2med --> $(bindir)/"
+	@ ln -s @abs_top_builddir@/vtk2med $(bindir)/vtk2med
+	@ echo "ln -s @abs_top_builddir@/foam2med.py --> $(pythondir)/foam2med/__init__.py"
+	@ ln -s @abs_top_builddir@/foam2med.py $(pythondir)/foam2med/__init__.py
+	@ echo "ln -s @abs_top_builddir@/admin/foam2med_check_foam2med.m4 --> $(m4dir)/foam2med/admin"
+	@ ln -s @abs_top_builddir@/admin/foam2med_check_foam2med.m4 $(m4dir)/foam2med/admin/foam2med_check_foam2med.m4
+
+
