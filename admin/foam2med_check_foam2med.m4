@@ -42,31 +42,23 @@ AC_SUBST(ENABLE_FOAM2MED)
 foam2med_ok=no
 
 dnl --------------------------------------------------------------------------------
-AC_ARG_WITH( [foam2med],
-             AC_HELP_STRING( [--with-foam2med=<path>],
-                             [use <path> to look for foam2med installation] ),
-             [foam2med_root_dir=${withval}],
-             [withval=yes])
-   
+AC_CHECK_PROG( [foam2med_exe], [vtk2med], [yes], [no] )
+
+
 dnl --------------------------------------------------------------------------------
-if test "x${withval}" = "xyes" ; then
-   if test ! "x${FOAM2MED_ROOT_DIR}" = "x" && test -d ${FOAM2MED_ROOT_DIR} ; then
-      foam2med_root_dir=${FOAM2MED_ROOT_DIR}
-   fi
+AC_MSG_CHECKING( foam2med python module )
+foam2med_python_module=no
+foam2med_python_module=[`python -c "import foam2med; print \"yes\"" 2>/dev/null`]
+AC_MSG_RESULT( ${foam2med_python_module} )
+
+
+dnl --------------------------------------------------------------------------------
+if test "x${foam2med_exe}" = "xyes" && test "x${foam2med_python_module}" = "xyes"; then
+   foam2med_ok=yes
 fi
 
-if test "x${withval}" = "xno" ; then
-   foam2med_ok=no
-fi
-
-dnl --------------------------------------------------------------------------------
-AC_CHECK_FILE( [${foam2med_root_dir}/vtk2med], [ foam2med_ok=yes ], [ foam2med_ok=no ] )
-
-AC_CHECK_FILE( [${foam2med_root_dir}/foam2med.py], [ foam2med_ok=yes ], [ foam2med_ok=no ] )
-
-dnl --------------------------------------------------------------------------------
 if test "x${foam2med_ok}" = "xno" ; then
-   AC_MSG_WARN([use either \${FOAM2MED_ROOT_DIR} or --with-foam2med=<path>])
+   AC_MSG_WARN([install or sourced foam2med package])
 fi
 
 dnl --------------------------------------------------------------------------------
