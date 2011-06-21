@@ -148,18 +148,13 @@ def execute( the_case_dir, the_output_med_file, the_output_mesh_name, the_foam_t
         pass
     print_d( "a_time2file_list = %s" % a_time2file_list )
 
-    # Definition path for the corresponding C++ executable 
-    a_execute_path = os.path.realpath( __file__ )
-    a_execute_path = os.path.dirname( a_execute_path )
-    print_d( "a_execute_path = %s" % a_execute_path )
-
     # Remove an existing MED file to be able to create a new one with the same name
     if os.path.exists( the_output_med_file ) :
         os.remove( the_output_med_file )
         pass
 
     # Assembling command line arguments for execution of the vtk2med utility
-    a_command_line = "\"%s\"" % ( os.path.join( a_execute_path, "vtk2med" ) )
+    a_command_line = "\"%s\"" % ( "vtk2med" )
     a_command_line += " --input-vtk-directory=\"%s\"" % ( a_vtk_folder )
     a_command_line += " --time-stamps=\"%s\"" % ( "|".join( a_time2file_list ) )
     a_command_line += " --output-mesh-name=\"%s\"" % ( the_output_mesh_name )
