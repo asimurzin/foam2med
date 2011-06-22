@@ -41,13 +41,13 @@ AC_SUBST(ENABLE_FOAM2MED)
 
 foam2med_ok=no
 
+
 dnl --------------------------------------------------------------------------------
 AC_CHECK_PROG( [foam2med_exe], [vtk2med], [yes], [no] )
 
 
 dnl --------------------------------------------------------------------------------
 AC_MSG_CHECKING( foam2med python module )
-foam2med_python_module=no
 foam2med_python_module=[`python -c "import foam2med; print \"yes\"" 2>/dev/null`]
 AC_MSG_RESULT( ${foam2med_python_module} )
 
@@ -55,11 +55,10 @@ AC_MSG_RESULT( ${foam2med_python_module} )
 dnl --------------------------------------------------------------------------------
 if test "x${foam2med_exe}" = "xyes" && test "x${foam2med_python_module}" = "xyes"; then
    foam2med_ok=yes
-fi
-
-if test "x${foam2med_ok}" = "xno" ; then
+else
    AC_MSG_WARN([install or sourced foam2med package])
 fi
+
 
 dnl --------------------------------------------------------------------------------
 ENABLE_FOAM2MED=${foam2med_ok}
