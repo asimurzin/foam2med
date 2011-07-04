@@ -6,6 +6,7 @@ To obtain more detail information on this account it is possible to
 run this script with '--help' command line option.
 """
 
+## Copyright (C) 2010- Alexey Petrov
 ## Copyright (C) 2009-2010 Pebble Bed Modular Reactor (Pty) Limited (PBMR)
 ## 
 ## This program is free software: you can redistribute it and/or modify
