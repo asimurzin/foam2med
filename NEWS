@@ -21,7 +21,17 @@ See https://csrcs.pbmr.co.za/svn/nea/prototypes/reaktor/foam2med
 
 
 ---------------------------------------------------------------------------
+New Features and Important Changes, r2.3 vs r2.2
 
+Author(s) :  Alexey PETROV
+
+2011-07-04
+
+* Adjusting to the "changed configuration system" (confFlu package)
+* To add installation procedure
+
+
+---------------------------------------------------------------------------
 New Features and Important Changes, r2.2 vs r2.1
 
 Author(s) :  Alexey PETROV

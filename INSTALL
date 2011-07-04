@@ -68,9 +68,12 @@ In order to build the module you have to perform the following actions:
 
    To see all applicable configuration options run "./configure --help"
 
-5. Build "foam2med" utility:
+5. Build & install "foam2med" utility:
 
    make
+   
+   make install 
+   ( sudo bash -c ". <path to salome>/env_products.sh && make install" - to install in "Salome" enviroment )
 
    (use "make clean" command to cleanup the build folder)
 

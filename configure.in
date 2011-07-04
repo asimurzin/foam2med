@@ -1,3 +1,4 @@
+
 ## Copyright (C) 2009-2010 Pebble Bed Modular Reactor (Pty) Limited (PBMR)
 ## 
 ## This program is free software: you can redistribute it and/or modify
@@ -22,7 +23,7 @@
 #--------------------------------------------------------------------------------------
 # Process this file with autoconf to produce a configure script
 #--------------------------------------------------------------------------------------
-AC_INIT([foam2vtk Project], [0.3], [alexey.petrov.nnov@gmail.com], [foam2vtk])
+AC_INIT([foam2med Project], [2.3], [alexey.petrov.nnov@gmail.com], [foam2med])
 
 # AC_CONFIG_AUX_DIR defines an alternative directory where to find the auxiliary
 # scripts such as config.guess, install-sh, ...
