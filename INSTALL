@@ -26,14 +26,18 @@ Pre-requisites
 
 foam2med utility requires OpenFOAM and SALOME as its pre-requisites.
 In its trun SALOME shoukd come with corresponding KERNEL, MED, GUI and VISU
-modules. To configure its build system, "foam2med" utitlity need confFoam 
-(common configuration package).
+modules. 
+
+
+* Make sure that confFlu  is installed
+  Please follow instructions from corresponding INSTALL file to setup confFlu
+  in your environment.
 
 * Make sure that OpenFOAM is installed (tested with versions 1.4.1-dev and 1.6).
   Please follow instructions from corresponding INSTALL file to setup OpenFOAM
   in your environment.
 
-* Make sure that SALOME is installed (tested with versions 4.1.4 and 5.1.1).
+* Make sure that SALOME is installed (tested with versions 4.1.4 and 5.1.1 and 5.1.4).
   Please follow instructions from corresponding INSTALL file to setup SALOME
   in your environment.
 
