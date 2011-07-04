@@ -22,7 +22,7 @@ run this script with '--help' command line option.
 ## You should have received a copy of the GNU General Public License
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ## 
-## See https://csrcs.pbmr.co.za/svn/nea/prototypes/reaktor/foam2med
+## See http://sourceforge.net/projects/pythonflu
 ##
 ## Author : Alexey PETROV
 ##
