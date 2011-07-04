@@ -29,7 +29,7 @@ In its turn SALOME should come with corresponding KERNEL, MED, GUI and VISU
 modules. 
 
 
-* Make sure that confFlu is installed
+* Make sure that confFlu is installed (tested with release 1.2-hybrid)
   Please follow instructions from corresponding INSTALL file to setup confFlu
   in your environment.
 
