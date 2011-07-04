@@ -24,16 +24,16 @@ See http://sourceforge.net/projects/pythonflu
 Pre-requisites
 #--------------------------------------------------------------------------------------
 
-foam2med utility requires OpenFOAM and SALOME as its pre-requisites.
-In its trun SALOME shoukd come with corresponding KERNEL, MED, GUI and VISU
+foam2med utility requires OpenFOAM, SALOME and confFlu as its pre-requisites.
+In its turn SALOME should come with corresponding KERNEL, MED, GUI and VISU
 modules. 
 
 
-* Make sure that confFlu  is installed
+* Make sure that confFlu is installed
   Please follow instructions from corresponding INSTALL file to setup confFlu
   in your environment.
 
-* Make sure that OpenFOAM is installed (tested with versions 1.4.1-dev and 1.6).
+* Make sure that OpenFOAM is installed (tested with versions 1.4.1-dev, 1.6 and 1.7.1).
   Please follow instructions from corresponding INSTALL file to setup OpenFOAM
   in your environment.
 

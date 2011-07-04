@@ -41,7 +41,7 @@ utility.
 Usage
 #--------------------------------------------------------------------------------------
 
-"foam2med" utility requires OpenFOAM and SALOME as its pre-requisites.
+"foam2med" utility requires OpenFOAM, SALOME and confFlu as its pre-requisites.
 "foam2med" utility is compatible with OpenFOAM version 1.4.1 or higher.
 Note, that OpenFOAM is required only in the run time to launch 
 the first step of translation - conversion OpenFOAM data to VTK; 
