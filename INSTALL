@@ -76,7 +76,7 @@ In order to build the module you have to perform the following actions:
 
    make
    
-   make install 
+   sudo make install 
 
    (use "make clean" command to cleanup the build folder)
 
