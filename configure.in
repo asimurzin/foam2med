@@ -24,7 +24,7 @@
 #--------------------------------------------------------------------------------------
 # Process this file with autoconf to produce a configure script
 #--------------------------------------------------------------------------------------
-AC_INIT([foam2med Project], [2.3], [alexey.petrov.nnov@gmail.com], [foam2med])
+AC_INIT([foam2med Project], [2.4], [alexey.petrov.nnov@gmail.com], [foam2med])
 
 # AC_CONFIG_AUX_DIR defines an alternative directory where to find the auxiliary
 # scripts such as config.guess, install-sh, ...
